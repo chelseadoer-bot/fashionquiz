@@ -16,16 +16,17 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,600..900;1,600..900&family=Fredoka:wght@500;600;700&family=Jua&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,600..900;1,600..900&family=Fredoka:wght@500;600;700&family=Jua&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
-  body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; background: #000; }
+  body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; background: #0B0B0D; }
   a { color: #7C79F2; text-decoration: none; }
   a:hover { opacity: .7; }
   @keyframes feUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes feIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes feWipe { from { transform: scaleX(0); } to { transform: scaleX(1); } }
   @keyframes pop { 0% { transform: scale(.7); opacity:0; } 55% { transform: scale(1.08); opacity:1; } 100% { transform: scale(1); opacity:1; } }
   @keyframes tw { 0%,100% { opacity:.2; transform: scale(.7); } 50% { opacity:.95; transform: scale(1.1); } }
   @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
@@ -35,42 +36,86 @@
 </style>
 </helmet>
 
-<div style="min-height:100vh;display:flex;justify-content:center;background:#000;font-family:'Pretendard',sans-serif;">
+<div style="min-height:100vh;display:flex;justify-content:center;background:#0B0B0D;font-family:'Pretendard',sans-serif;">
 <div style="width:100%;max-width:440px;min-height:100vh;position:relative;overflow:hidden;">
 
 <!-- ===================== INTRO ===================== -->
 <sc-if value="{{ isIntro }}" hint-placeholder-val="{{ true }}">
-<div style="min-height:100vh;background:#000;display:flex;flex-direction:column;align-items:center;padding:44px 26px 34px;position:relative;overflow:hidden;">
-  <div style="position:absolute;top:150px;right:44px;color:#fff;font-size:15px;animation:tw 2.8s ease-in-out infinite;">✦</div>
-  <div style="position:absolute;top:250px;left:34px;color:#fff;font-size:11px;animation:tw 3.4s .5s ease-in-out infinite;">✦</div>
-  <div style="position:absolute;bottom:230px;left:60px;color:#fff;font-size:13px;animation:tw 3s 1s ease-in-out infinite;">✦</div>
-  <div style="position:absolute;bottom:150px;right:70px;color:#fff;font-size:10px;animation:tw 3.6s .3s ease-in-out infinite;">✦</div>
-  <div style="position:absolute;bottom:320px;right:40px;color:#fff;font-size:16px;animation:tw 2.6s .8s ease-in-out infinite;">✦</div>
+<div style="min-height:100vh;background:#F5F4EF;display:flex;flex-direction:column;">
 
-  <img src="fedit_wordmark.png" alt="FEDIT" style="height:22px;width:auto;display:block;animation:pop .6s ease both;position:relative;z-index:2;"/>
+  <!-- 주황 헤더 밴드 -->
+  <div style="background:#FF3B00;padding:16px 22px 18px;transform-origin:left center;animation:feWipe .5s ease both;">
+    <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:32px;letter-spacing:.02em;color:#0B0B0D;line-height:1;">2026—2027</div>
+    <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:32px;letter-spacing:.02em;color:#0B0B0D;line-height:1;margin-top:4px;">TREND LEVEL TEST</div>
+  </div>
 
-  <div style="position:relative;margin-top:30px;text-align:center;animation:feUp .7s .05s ease both;z-index:2;">
-    <div style="font-family:'Fredoka',sans-serif;font-weight:700;color:#A6D2F8;letter-spacing:.06em;filter:drop-shadow(0 6px 22px rgba(124,168,240,.4));">
-      <div style="font-size:64px;line-height:1.04;">
-        <span style="display:inline-block;transform:rotate(-5deg);">T</span><span style="display:inline-block;transform:rotate(4deg);">R</span><span style="display:inline-block;transform:rotate(-3deg);">E</span><span style="display:inline-block;transform:rotate(4deg);">N</span><span style="display:inline-block;transform:rotate(-4deg);">D</span>
+  <!-- 부제 + 레벨 스택 그래픽 -->
+  <div style="background:#F7F6F1;padding:2px 22px 6px;animation:feUp .6s .08s ease both;">
+    <div style="display:flex;align-items:center;gap:18px;margin-top:14px;">
+      <div style="width:190px;flex:0 0 auto;">
+        <svg viewBox="0 0 190 224" style="width:100%;height:auto;display:block;">
+          <polygon points="12,152 95,188 95,216 12,180" fill="#7BF2DC"/>
+          <polygon points="178,152 178,180 95,216 95,188" fill="#7BF2DC"/>
+          <polygon points="95,116 178,152 95,188 12,152" fill="#7BF2DC"/>
+          <polygon points="95,76 178,112 95,148 12,112" fill="#EFC81A"/>
+          <polygon points="95,40 178,76 95,112 12,76" fill="#F0552B"/>
+          <polygon points="95,4 178,40 95,76 12,40" fill="#1E49E2"/>
+        </svg>
       </div>
-      <div style="font-size:64px;line-height:1.04;">
-        <span style="display:inline-block;transform:rotate(4deg);">L</span><span style="display:inline-block;transform:rotate(-4deg);">E</span><span style="display:inline-block;transform:rotate(4deg);">V</span><span style="display:inline-block;transform:rotate(-5deg);">E</span><span style="display:inline-block;transform:rotate(4deg);">L</span>
-      </div>
-      <div style="font-size:64px;line-height:1.04;">
-        <span style="display:inline-block;transform:rotate(-5deg);">T</span><span style="display:inline-block;transform:rotate(4deg);">E</span><span style="display:inline-block;transform:rotate(-3deg);">S</span><span style="display:inline-block;transform:rotate(5deg);">T</span>
+      <div style="flex:1 1 0%;display:flex;flex-direction:column;gap:16px;">
+        <div style="height:1px;background:#D5D4CD;"></div>
+        <div>
+          <div style="font-family:'Noto Sans KR',sans-serif;font-weight:700;font-size:19px;line-height:1.4;letter-spacing:-.02em;color:#0B0B0D;">6문항으로 측정되는</div>
+          <div style="font-family:'Noto Sans KR',sans-serif;font-weight:700;font-size:19px;line-height:1.4;letter-spacing:-.02em;color:#A9A8A1;margin-top:6px;">당신의 패션 감도</div>
+        </div>
+        <img src="fedit_wordmark.png" alt="FEDIT" style="height:24px;width:auto;align-self:flex-start;flex:0 0 auto;display:block;margin-top:-6px;filter:brightness(0);"/>
+        <div style="height:1px;background:#D5D4CD;"></div>
       </div>
     </div>
   </div>
 
-  <div style="font-size:17px;font-weight:800;color:#fff;margin-top:26px;text-align:center;animation:feUp .7s .2s ease both;position:relative;z-index:2;"><span style="color:#EFDA2E;">FEDIT</span> <span style="color:#EFDA2E;">2026-2027</span> 패션 감도 능력고사</div>
-  <div style="font-size:13px;color:#8E8E99;margin-top:9px;text-align:center;font-weight:500;animation:feUp .7s .28s ease both;position:relative;z-index:2;">나는 패션 트렌드 빠삭러? 지금 내 레벨 테스트하기</div>
+  <!-- 2×2 스탯 그리드 -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;background:#0B0B0D;animation:feUp .6s .16s ease both;">
+    <div style="background:#1E49E2;border-radius:18px;padding:16px 16px 18px;min-height:186px;display:flex;flex-direction:column;">
+      <div style="flex:1 1 0%;background:rgba(255,255,255,.22);border-radius:12px;padding:12px 14px;display:flex;align-items:flex-start;justify-content:flex-end;">
+        <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:56px;line-height:1;letter-spacing:-.035em;color:#fff;text-align:right;">6</div>
+      </div>
+      <div style="height:14px;"></div>
+      <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:38px;line-height:1;letter-spacing:-.03em;color:#fff;">Question</div>
+    </div>
 
-  <div style="flex:1;min-height:180px;display:flex;align-items:center;justify-content:center;width:100%;position:relative;z-index:1;">
-    <img src="vending_hero.png" alt="FEDIT vending machine" style="width:86%;max-width:410px;height:auto;animation:floatY 6s ease-in-out infinite;"/>
+    <div style="background:#EEF1FC;border-radius:18px;padding:16px 16px 18px;min-height:186px;display:flex;flex-direction:column;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+        <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:12px;line-height:1.35;color:#1E49E2;">Runway<br>Editorial<br>Evolving</div>
+      </div>
+      <div style="flex:1 1 0%;"></div>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;">
+        <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:38px;line-height:1;letter-spacing:-.04em;color:#1E49E2;">4 Type</div>
+      </div>
+    </div>
+
+    <div style="background:#F0552B;border-radius:18px;padding:14px;min-height:186px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;place-items:center;">
+      <div style="width:100%;aspect-ratio:1/1;background:rgba(255,255,255,.24);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:600;font-size:44px;letter-spacing:-.03em;color:#fff;">A</div>
+      <div style="width:100%;aspect-ratio:1/1;background:rgba(255,255,255,.24);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:600;font-size:44px;letter-spacing:-.03em;color:#fff;">B</div>
+      <div style="width:100%;aspect-ratio:1/1;background:rgba(255,255,255,.24);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:600;font-size:44px;letter-spacing:-.03em;color:#fff;">C</div>
+      <div style="width:100%;aspect-ratio:1/1;background:rgba(255,255,255,.42);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:600;font-size:44px;letter-spacing:-.03em;color:#fff;">D</div>
+    </div>
+
+    <div style="background:#FDF3EE;border-radius:18px;padding:16px 16px 18px;min-height:186px;display:flex;flex-direction:column;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:34px;line-height:1;letter-spacing:-.04em;color:#F0552B;">Top<br>Type</div>
+      </div>
+      <div style="flex:1 1 0%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:2px;">
+        <div style="width:86px;height:86px;border-radius:50%;background:#F0552B;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:600;font-size:46px;line-height:1;letter-spacing:-.03em;color:#FDF3EE;">?</div>
+      </div>
+    </div>
   </div>
 
-  <button onClick="{{ start }}" style="width:100%;border:none;background:#fff;color:#111;padding:22px;font-family:'Pretendard';font-size:16px;font-weight:800;letter-spacing:.28em;border-radius:100px;cursor:pointer;animation:glow 2.6s ease-in-out infinite;position:relative;z-index:2;" style-hover="transform:translateY(-2px);">START</button>
+  <!-- 하단 고정 CTA -->
+  <div style="position:sticky;bottom:0;background:#F5F4EF;padding:14px 22px calc(14px + env(safe-area-inset-bottom));box-shadow:0 -10px 24px rgba(11,11,13,.1);animation:feUp .6s .24s ease both;">
+    <button onClick="{{ start }}" style="width:100%;border:none;background:#0B0B0D;color:#fff;padding:19px;font-family:'Noto Sans KR',sans-serif;font-size:16px;font-weight:800;letter-spacing:.02em;text-align:center;cursor:pointer;border-radius:100px;" style-hover="opacity:.88;">테스트 시작하기</button>
+  </div>
+
 </div>
 </sc-if>
 
