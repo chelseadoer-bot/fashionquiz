@@ -150,8 +150,8 @@
     <p style="font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.6;font-weight:700;color:#0B0B0D;text-align:center;margin:12px 0 0;max-width:340px;text-wrap:pretty;animation:feUp .45s .05s ease both;">{{ q.text }}<b style="color:#FF3B00;font-weight:800;">{{ q.bold }}</b></p>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:340px;margin:22px 0 24px;animation:pop .5s .1s ease both;">
-      <img src="{{ q.img1 }}" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;border-radius:18px;display:block;background:#EAE9E3;"/>
-      <img src="{{ q.img2 }}" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;border-radius:18px;display:block;background:#EAE9E3;"/>
+      <img src="{{ q.img1 }}" alt="" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;border-radius:18px;display:block;background:#EAE9E3;"/>
+      <img src="{{ q.img2 }}" alt="" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;border-radius:18px;display:block;background:#EAE9E3;"/>
     </div>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:340px;">
@@ -221,7 +221,7 @@
     </div>
 
     <!-- 3) 랜딩페이지 바로가기 -->
-    <a href="https://fedit.framer.website/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:14px;background:linear-gradient(135deg,#3a56ff,#2b3fd6);color:#fff;padding:19px;border-radius:100px;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 12px 28px rgba(58,86,255,.4);">14일 무료로 체험하기 <span style="font-size:17px;">→</span></a>
+    <a href="https://fedit.framer.website/fedit-vip-x7k2q9" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:14px;background:linear-gradient(135deg,#3a56ff,#2b3fd6);color:#fff;padding:19px;border-radius:100px;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 12px 28px rgba(58,86,255,.4);">14일 무료로 체험하기 <span style="font-size:17px;">→</span></a>
   </div>
 
   <div style="font-size:11px;color:{{ card.faint }};margin-top:26px;text-align:center;">© FEDIT · 2026-2027 F/W 트렌드 감도 능력고사</div>
@@ -415,8 +415,8 @@ class Component extends DCLogic {
       const q = {
         qlabel:Q.qlabel, n:qIndex+1, nn:String(qIndex+1).padStart(2,'0'), total:6, totalPad:'06', target:Q.target, emoji:Q.emoji,
         isGlasses: qIndex===0, g1: qIndex===1, g2: qIndex===2, g3: qIndex===3, g4: qIndex===4, g5: qIndex===5,
-        img1: 'quiz-img/' + (qIndex+1) + '-1.jpg',
-        img2: 'quiz-img/' + (qIndex+1) + '-2.jpg',
+        img1: 'quiz-img/' + (qIndex+1) + '-1.jpg?v=2',
+        img2: 'quiz-img/' + (qIndex+1) + '-2.jpg?v=2',
         text:Q.text, bold:Q.bold,
         starsFilled: '★'.repeat(Q.diff), starsEmpty: '★'.repeat(3 - Q.diff),
         isMulti: Q.multi === true,
